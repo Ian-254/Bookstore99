@@ -84,13 +84,13 @@ foreach ($rows as $item){
                 </thead>
 
                 <tbody>
-                <?php foreach ($rows as $sales): ?>
+                <?php foreach ($rows as $data): ?>
                     <tr>
-                        <td> <?= $sales["customer"] ?> </td>
-                        <td> <?= $sales["title"] ?> </td>
-                        <td> <?= $sales["price"] ?> </td>
-                        <td> <?= $sales["user"] ?> </td>
-                        <td> <?= $sales["date_sold"] ?> </td>
+                        <td> <?= $data["customer"] ?> </td>
+                        <td> <?= $data["title"] ?> </td>
+                        <td> <?= $data["price"] ?> </td>
+                        <td> <?= $data["user"] ?> </td>
+                        <td> <?= $data["date_sold"] ?> </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
