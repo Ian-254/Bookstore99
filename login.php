@@ -8,14 +8,14 @@ if (isset($_REQUEST["email"])) {
     require_once 'connect.php';
     //$sql = "INSERT INTO `users`(`id`, `names`, `email`, `password`) VALUES (null,'$names','$email','$password')";
     //mysqli_query($con, $sql) or die( mysqli_error($con) );// executing the query
-    $stmt = mysqli_prepare($con, "SELECT * FROM user WHERE email =? LIMIT 1");
-    //bind data
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+   $sql= "SELECT * FROM users WHERE email='email' LIMIT 1");
+    $result= mysqli_query($con,$sql) or die(mysqli_error($con));
+    //var)_dump(mysqli_fetch_assoc($result));
+    //die
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
         $hash = $user["password"];
+        //$password=password_has($password,PASSWORD_BCRYPT);
        if (password_verify($password,$hash))
        {
            //success 123456
