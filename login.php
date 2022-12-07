@@ -10,7 +10,7 @@ if (isset($_REQUEST["email"])) {
     //mysqli_query($con, $sql) or die( mysqli_error($con) );// executing the query
    $sql= "SELECT * FROM users WHERE email='email' LIMIT 1");
     $result= mysqli_query($con,$sql) or die(mysqli_error($con));
-    //var)_dump(mysqli_fetch_assoc($result));
+    //var_dump(mysqli_fetch_assoc($result));
     //die
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
